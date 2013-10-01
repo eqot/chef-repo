@@ -1,0 +1,22 @@
+upstream rails {
+    server unix:/var/tmp/.unicorn.sock;
+}
+
+server {
+    listen <%= node['nginx']['rails_port'] %>;
+    server_name localhost;
+
+    root /usr/share/nginx/rails/<%= node['nginx']['rails_app'] %>/current/public/;
+
+    location /<%= node['nginx']['rails_app'] %> {
+        if (!-f $request_filename) {
+            rewrite ^/<%= node['nginx']['rails_app'] %>/(.+) $1 break;
+            proxy_pass http://rails/$1;
+            break;
+        }
+    }
+
+    error_page 404 /404.html;
+    error_page 422 /422.html;
+    error_page 400 401 403 500 501 502 503 /500.html;
+}

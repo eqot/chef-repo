@@ -4,7 +4,13 @@
     "domain": "foo.com",
     "password": "dummy"
   },
+  "nginx": {
+    "port": 8000,
+    "rails_port": 80,
+    "rails_app": "sample_app"
+  },
   "run_list": [
-    "hostname"
+    "hostname",
+    "nginx"
   ]
 }
