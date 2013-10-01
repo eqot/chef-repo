@@ -12,6 +12,7 @@
   "run_list": [
     "hostname",
     "nginx",
-    "rails"
+    "rails",
+    "sqlite"
   ]
 }
