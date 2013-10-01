@@ -1,5 +1,5 @@
 {
-  "hostname": {
+  "dip": {
     "account": "dummy",
     "domain": "foo.com",
     "password": "dummy"

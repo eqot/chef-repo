@@ -12,3 +12,13 @@ template "/usr/local/bin/ddns-update.pl" do
 	group "ec2-user"
 	mode 0777
 end
+
+bash "Run script" do
+  user 'ec2-user'
+  group 'ec2-user'
+  cwd '/home/ec2-user'
+  environment "HOME" => '/home/ec2-user'
+  code <<-EOH
+    /usr/local/bin/ddns-update.pl
+  EOH
+end

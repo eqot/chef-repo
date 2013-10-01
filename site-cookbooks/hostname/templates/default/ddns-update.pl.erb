@@ -1,4 +1,4 @@
-﻿#!/usr/bin/perl
+#!/usr/bin/perl
 
 # ieServer.Net 専用 DDNS IP アドレス更新スクリプト - ddns-update.pl
 # 作成者：山本恭弘@Agora Inc.　作成日:2004/03/24
@@ -30,9 +30,9 @@ $REMOTE_ADDR_CHK = "http://ieserver.net/ipcheck.shtml";
 $DDNS_UPDATE     = "https://ieserver.net/cgi-bin/dip.cgi";
 
 # ieServer.Netにて取得したアカウント（サブドメイン）情報を記入
-$ACCOUNT         = "<%= node['hostname']['account'] %>";     # アカウント(サブドメイン)名設定
-$DOMAIN          = "<%= node['hostname']['domain'] %>";     # ドメイン名設定
-$PASSWORD        = "<%= node['hostname']['password'] %>";     # パスワード設定
+$ACCOUNT         = "<%= node['dip']['account'] %>";     # アカウント(サブドメイン)名設定
+$DOMAIN          = "<%= node['dip']['domain'] %>";     # ドメイン名設定
+$PASSWORD        = "<%= node['dip']['password'] %>";     # パスワード設定
 
 
 if(!open(FILE,"$CURRENT_IP_FILE")) {
