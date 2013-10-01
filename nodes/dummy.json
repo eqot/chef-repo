@@ -1,1 +1,10 @@
-{"run_list":[]}
+{
+  "hostname": {
+    "account": "dummy",
+    "domain": "foo.com",
+    "password": "dummy"
+  },
+  "run_list": [
+    "hostname"
+  ]
+}
