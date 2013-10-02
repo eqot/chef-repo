@@ -33,6 +33,6 @@ end
 directory "/usr/share/nginx/rails/" do
 	owner "ec2-user"
 	group "ec2-user"
-	mode 0744
+	mode 0755
 	action :create
 end
