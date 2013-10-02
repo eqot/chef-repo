@@ -14,6 +14,7 @@
     "nginx",
     "rails",
     "sqlite",
-    "monit"
+    "monit",
+    "git"
   ]
 }
