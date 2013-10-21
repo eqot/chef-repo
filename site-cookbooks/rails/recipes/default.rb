@@ -20,6 +20,7 @@ bash "install Ruby" do
         rvm install 2.0.0
         rvm use 2.0.0@rails_4_0 --create --default
         echo "rvm use 2.0.0@rails_4_0 --default" >> ~/.bash_profile
+        rvm rvmrc warning ignore allGemfiles
     EOH
 end
 
