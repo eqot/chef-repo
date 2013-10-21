@@ -8,10 +8,9 @@ server {
 
     root /usr/share/nginx/rails/<%= node['nginx']['rails_app'] %>/current/public/;
 
-    location /<%= node['nginx']['rails_app'] %> {
+    location / {
         if (!-f $request_filename) {
-            rewrite ^/<%= node['nginx']['rails_app'] %>/(.+) $1 break;
-            proxy_pass http://rails/$1;
+            proxy_pass http://rails;
             break;
         }
     }
