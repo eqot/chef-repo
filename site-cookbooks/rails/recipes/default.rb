@@ -43,5 +43,6 @@ bash "install Ruby on Rails" do
     code <<-EOH
         source ~/.rvm/scripts/rvm
         gem install rails --version 4.0.0
+        gem install rake
     EOH
 end
