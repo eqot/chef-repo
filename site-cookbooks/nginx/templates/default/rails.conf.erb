@@ -9,6 +9,8 @@ server {
     root /usr/share/nginx/rails/<%= node['nginx']['rails_app'] %>/current/public/;
 
     location / {
+        proxy_set_header X-Forwarded-Host $host;
+
         if (!-f $request_filename) {
             proxy_pass http://rails;
             break;
