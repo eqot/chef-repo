@@ -18,8 +18,8 @@ bash "install Ruby" do
         source ~/.rvm/scripts/rvm
         rvm requirements
         rvm install 2.0.0
-        rvm use 2.0.0@rails_4_0_1 --create --default
-        echo "rvm use 2.0.0@rails_4_0_1 --default" >> ~/.bash_profile
+        rvm use 2.0.0@rails_4_0_2 --create --default
+        echo "rvm use 2.0.0@rails_4_0_2 --default" >> ~/.bash_profile
         rvm rvmrc warning ignore allGemfiles
     EOH
 end
@@ -35,14 +35,14 @@ bash "install Ruby on Rails" do
 #    not_if <<-EOC, :user => 'ec2-user', :environment => { 'HOME' => '/home/ec2-user' }
 #        'source ~/.rvm/scripts/rvm && which rails'
 #    EOC
-    # not_if { File.exists?("/home/ec2-user/.rvm/gems/ruby-2.0.0-p353@rails_4_0_1/bin/rails") }
+    # not_if { File.exists?("/home/ec2-user/.rvm/gems/ruby-2.0.0-p353@rails_4_0_2/bin/rails") }
     user 'ec2-user'
     group 'ec2-user'
     cwd '/home/ec2-user'
     environment "HOME" => '/home/ec2-user'
     code <<-EOH
         source ~/.rvm/scripts/rvm
-        gem install rails --version 4.0.1
+        gem install rails --version 4.0.2
         gem install rake
     EOH
 end
